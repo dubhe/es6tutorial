@@ -1259,7 +1259,7 @@ const obj = Object.create(
 ```javascript
 let mix = (object) => ({
   with: (...mixins) => mixins.reduce(
-    (c, mixin) => Object.create(
+    (c, mixin) => Object.defineProperties(
       c, Object.getOwnPropertyDescriptors(mixin)
     ), object)
 });
